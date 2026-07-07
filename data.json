@@ -1,0 +1,88 @@
+{
+  "name": "~",
+  "type": "dir",
+  "children": [
+    {
+      "name": "index.html",
+      "type": "html",
+      "size": "3.4 KB",
+      "mod": "just now",
+      "code": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <title>FileVerse 2.0</title>\n    <link rel=\"stylesheet\" href=\"./style.css\" />\n  </head>\n  <body>\n    <main class=\"app\">One Pen. Many files.</main>\n    <script src=\"./script.js\"></script>\n  </body>\n</html>"
+    },
+    {
+      "name": "style.css",
+      "type": "css",
+      "size": "7.1 KB",
+      "mod": "2m ago",
+      "code": ":root {\n  --cyan: #53f4ff;\n  --pink: #ff4fd8;\n  --green: #7cff9b;\n}\n.card:hover { transform: translateY(-3px); }\n.paper { animation: float 4s ease-in-out infinite; }"
+    },
+    {
+      "name": "script.js",
+      "type": "js",
+      "size": "5.6 KB",
+      "mod": "2m ago",
+      "code": "const FS = await fetch('./data.json').then(r => r.json());\nconst tree = buildTree(FS);\ntree.addEventListener('click', openFile);\n\nfunction openFile(node) {\n  drawer.show(node);\n}"
+    },
+    {
+      "name": "data.json",
+      "type": "json",
+      "size": "2.9 KB",
+      "mod": "now",
+      "code": "{\n  \"challenge\": \"cpc-files\",\n  \"month\": \"July 2026\",\n  \"editor\": \"CodePen 2.0\",\n  \"note\": \"This Pen reads its own file tree from this JSON.\"\n}"
+    },
+    {
+      "name": "src",
+      "type": "dir",
+      "children": [
+        {
+          "name": "tree.js",
+          "type": "js",
+          "size": "1.9 KB",
+          "mod": "5m ago",
+          "code": "export function buildTree(node) {\n  return node.children.map(render);\n}"
+        },
+        {
+          "name": "explorer.js",
+          "type": "js",
+          "size": "2.6 KB",
+          "mod": "6m ago",
+          "code": "let view = 'grid';\nfunction setView(v) { view = v; }"
+        }
+      ]
+    },
+    {
+      "name": "assets",
+      "type": "dir",
+      "children": [
+        {
+          "name": "logo.svg",
+          "type": "svg",
+          "size": "1.4 KB",
+          "mod": "12m ago",
+          "code": "<svg viewBox=\"0 0 200 200\" role=\"img\">\n  <title>FileVerse Logo</title>\n  <rect width=\"200\" height=\"200\" rx=\"42\" />\n  <path d=\"M58 52h60l28 28v68H58z\" />\n  <path d=\"M118 52v30h30\" />\n</svg>"
+        },
+        {
+          "name": "cover.svg",
+          "type": "svg",
+          "size": "5.1 KB",
+          "mod": "12m ago",
+          "code": "<svg viewBox=\"0 0 1200 630\">\n  <!-- neon cabinet artwork -->\n</svg>"
+        },
+        {
+          "name": "preview.img",
+          "type": "img",
+          "size": "84 KB",
+          "mod": "12m ago",
+          "code": "\u25EB binary \u2014 1200\u00D7630 social preview card"
+        }
+      ]
+    },
+    {
+      "name": "README.md",
+      "type": "md",
+      "size": "1.2 KB",
+      "mod": "1h ago",
+      "code": "# FileVerse 2.0\n\nA playful file explorer built for the\nJuly 2026 CodePen Challenge (#cpc-files).\n\n- Tree loaded from data.json\n- Grid / list views\n- Breadcrumb navigation\n- Slide-in source preview"
+    }
+  ]
+}

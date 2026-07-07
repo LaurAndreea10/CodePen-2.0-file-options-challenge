@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FileVerse 2.0 — CodePen Challenge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <main class="app">
+    <!-- ── hero ── -->
+    <section class="hero">
+      <div>
+        <p class="eyebrow">CodePen Challenge · July 2026</p>
+        <h1>FileVerse 2.0</h1>
+        <p class="subtitle">
+          A playful file explorer built to celebrate the new CodePen 2.0 editor.
+          Browse a whole project tree — HTML, CSS, JS, JSON and SVG — across folders,
+          right inside one Pen.
+        </p>
+        <div class="tags">
+          <span>#cpc-files</span>
+          <span>#codepenchallenge</span>
+          <span>index.html</span>
+          <span>style.css</span>
+          <span>script.js</span>
+        </div>
+      </div>
+
+      <div class="file-stack" aria-hidden="true">
+        <div class="paper html">HTML</div>
+        <div class="paper css">CSS</div>
+        <div class="paper js">JS</div>
+      </div>
+    </section>
+
+    <!-- ── workspace ── -->
+    <section class="workspace" aria-label="File browser workspace">
+      <aside class="sidebar">
+        <div class="window-controls" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </div>
+        <h2>Project files</h2>
+        <div id="tree" class="tree"></div>
+      </aside>
+
+      <section class="preview">
+        <div class="preview-header">
+          <nav id="crumbs" class="crumbs" aria-label="Breadcrumb"></nav>
+          <div class="view-toggle" role="group" aria-label="View mode">
+            <button id="btnGrid" class="on" data-view="grid">▦ Grid</button>
+            <button id="btnList" data-view="list">≣ List</button>
+          </div>
+        </div>
+
+        <div class="dir-head">
+          <h2 id="dirTitle">Root</h2>
+          <button id="shuffleBtn" class="shuffle-btn">Open a random file</button>
+        </div>
+
+        <div id="grid" class="grid"></div>
+
+        <div class="meta-grid">
+          <article><strong id="mFiles">0</strong><span>Files here</span></article>
+          <article><strong id="mFolders">0</strong><span>Folders</span></article>
+          <article><strong>2.0</strong><span>Editor</span></article>
+        </div>
+      </section>
+    </section>
+
+    <!-- ── why it fits ── -->
+    <section class="ideas">
+      <h2>Why this fits the challenge</h2>
+      <div class="idea-grid">
+        <article>
+          <span>01</span>
+          <h3>A real file tree</h3>
+          <p>Expandable folders, breadcrumbs and directory navigation — the Pen is entirely about files and structure.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Many file types</h3>
+          <p>HTML, CSS, JS, JSON and SVG all live side by side, exactly what the 2.0 editor unlocks.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Two ways to look</h3>
+          <p>Grid and list views, plus a slide-in source preview for every file you open.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- ── preview drawer ── -->
+  <div id="scrim" class="scrim"></div>
+  <aside id="drawer" class="drawer" aria-label="File preview">
+    <header class="dhead">
+      <span id="pvIcon" class="dhead-icon"></span>
+      <div class="dhead-t">
+        <h3 id="pvName"></h3>
+        <p id="pvPath"></p>
+      </div>
+      <button id="pvClose" class="close" aria-label="Close preview">×</button>
+    </header>
+    <div class="dbody">
+      <div class="kv"><span>Type</span><b id="pvType"></b></div>
+      <div class="kv"><span>Size</span><b id="pvSize"></b></div>
+      <div class="kv"><span>Lines</span><b id="pvLines"></b></div>
+      <div class="kv"><span>Modified</span><b id="pvMod"></b></div>
+      <div class="screen">
+        <pre id="pvCode"></pre>
+      </div>
+    </div>
+  </aside>
+
+  <script src="./script.js"></script>
+</body>
+</html>
