@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A CodePen 2.0 challenge project exploring file organization, editor structure, and creative front-end workflows."
+    />
+    <title>CodePen 2.0 — File Options Challenge</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero__badge">CodePen Challenge · July 2026</div>
+        <h1 id="page-title">FileVerse 2.0</h1>
+        <p class="hero__lead">
+          A playful landing experience about the most important part of a CodePen 2.0 Pen:
+          the files that organize, power, and publish your work.
+        </p>
+        <div class="hero__actions" aria-label="Primary actions">
+          <a href="#files" class="button button--primary">Explore files</a>
+          <a href="#publish" class="button button--ghost">Publish flow</a>
+        </div>
+      </section>
+
+      <section class="panel grid" id="files" aria-labelledby="files-title">
+        <div>
+          <p class="eyebrow">Folder structure</p>
+          <h2 id="files-title">Three clean files, one polished Pen.</h2>
+          <p>
+            The challenge starts from a simple setup: HTML for structure, CSS for the visual
+            system, and JavaScript for interaction. CodePen 2.0 makes that structure clearer and
+            easier to manage.
+          </p>
+        </div>
+        <div class="file-stack" aria-label="Project files">
+          <article class="file-card" tabindex="0">
+            <span>01</span>
+            <strong>index.html</strong>
+            <p>Semantic sections, accessible labels, and the page foundation.</p>
+          </article>
+          <article class="file-card" tabindex="0">
+            <span>02</span>
+            <strong>style.css</strong>
+            <p>Responsive layout, glass panels, gradients, and motion details.</p>
+          </article>
+          <article class="file-card" tabindex="0">
+            <span>03</span>
+            <strong>script.js</strong>
+            <p>Interactive cards, publishing checklist, and tiny interface feedback.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel" id="publish" aria-labelledby="publish-title">
+        <p class="eyebrow">GitHub Pages</p>
+        <h2 id="publish-title">404 fix checklist</h2>
+        <ol class="checklist">
+          <li><span></span> Add an <code>index.html</code> file at the repository root.</li>
+          <li><span></span> Keep <code>style.css</code> and <code>script.js</code> beside it.</li>
+          <li><span></span> Publish from the <code>main</code> branch and <code>/root</code> folder.</li>
+          <li><span></span> Wait for GitHub Pages to rebuild, then refresh the live URL.</li>
+        </ol>
+      </section>
+
+      <section class="status-card" aria-live="polite">
+        <div>
+          <p class="eyebrow">Live status</p>
+          <h2>Ready to publish</h2>
+          <p id="status-text">Files are in place. GitHub Pages can now serve the project.</p>
+        </div>
+        <button class="button button--primary" id="status-button" type="button">
+          Mark as published
+        </button>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
