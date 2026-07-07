@@ -8,9 +8,9 @@ Repository: https://github.com/LaurAndreea10/CodePen-2.0-file-options-challenge
 
 ## What it does
 
-FileVerse 2.0 reads a project tree from `data.json` and renders it as an interactive file explorer. The interface includes expandable folders, breadcrumbs, grid/list views, file cards, and a slide-in source preview.
+FileVerse 2.0 reads a project tree from `data.json` and renders it as an interactive file explorer. The interface includes expandable folders, breadcrumbs, grid/list views, file cards, slide-in source preview, and product-like workflow tools.
 
-## 8/8 upgrades added
+## Base 8/8 upgrades
 
 1. Splash/loading screen with HTML/CSS/JS boot cards.
 2. Search bar for real-time file filtering.
@@ -20,6 +20,23 @@ FileVerse 2.0 reads a project tree from `data.json` and renders it as an interac
 6. External action buttons for GitHub, Live Pages and CodePen.
 7. Premium README with features and deployment notes.
 8. Challenge submission card with a compact project pitch.
+
+## Premium +10 upgrade pack
+
+1. Command Palette with `Ctrl/Cmd + K`.
+2. File tabs for opened files.
+3. Favorites / pinned files.
+4. Activity timeline.
+5. Achievement badges.
+6. Theme switch: Neon, Soft and Retro Terminal.
+7. Export project summary as JSON.
+8. Accessibility mode: high contrast and reduced motion.
+9. Mini onboarding flow.
+10. Built by Laura Andreea section with portfolio CTAs.
+
+## Current score
+
+18/18 features active.
 
 ## Tech stack
 
@@ -35,6 +52,7 @@ FileVerse 2.0 reads a project tree from `data.json` and renders it as an interac
 .
 ├── index.html
 ├── style.css
+├── extras.css
 ├── script.js
 ├── data.json
 └── README.md
@@ -50,4 +68,4 @@ Use these settings:
 
 ## Challenge angle
 
-This project fits the CodePen 2.0 Files challenge because the interface itself is about files: file types, folders, structure, previews, navigation and publishing flow.
+This project fits the CodePen 2.0 Files challenge because the interface itself is about files: file types, folders, structure, previews, navigation, command workflows and publishing flow.
