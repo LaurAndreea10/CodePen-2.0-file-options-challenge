@@ -1,82 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="A CodePen 2.0 challenge project exploring file organization, editor structure, and creative front-end workflows."
-    />
-    <title>CodePen 2.0 — File Options Challenge</title>
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body>
-    <main class="app-shell">
-      <section class="hero" aria-labelledby="page-title">
-        <div class="hero__badge">CodePen Challenge · July 2026</div>
-        <h1 id="page-title">FileVerse 2.0</h1>
-        <p class="hero__lead">
-          A playful landing experience about the most important part of a CodePen 2.0 Pen:
-          the files that organize, power, and publish your work.
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FileVerse 2.0</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="orb orb-a"></div>
+  <div class="orb orb-b"></div>
+
+  <main class="workspace">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark">⌘</span>
+        <div>
+          <p>CodePen 2.0 Challenge</p>
+          <h1>FileVerse 2.0</h1>
+        </div>
+      </div>
+      <div class="actions">
+        <button id="shuffleBtn" type="button">Random file</button>
+      </div>
+    </header>
+
+    <section class="hero-console">
+      <div>
+        <p class="pill">Files are the new canvas</p>
+        <h2>Explore a Pen like a tiny creative system.</h2>
+        <p>
+          Tree navigation, grid and list modes, breadcrumbs and a preview drawer turn the basic
+          CodePen 2.0 file setup into a polished interactive file universe.
         </p>
-        <div class="hero__actions" aria-label="Primary actions">
-          <a href="#files" class="button button--primary">Explore files</a>
-          <a href="#publish" class="button button--ghost">Publish flow</a>
-        </div>
-      </section>
+      </div>
+      <div class="stats">
+        <article><strong id="mFiles">0</strong><span>files</span></article>
+        <article><strong id="mFolders">0</strong><span>folders</span></article>
+        <article><strong>2.0</strong><span>editor vibe</span></article>
+      </div>
+    </section>
 
-      <section class="panel grid" id="files" aria-labelledby="files-title">
-        <div>
-          <p class="eyebrow">Folder structure</p>
-          <h2 id="files-title">Three clean files, one polished Pen.</h2>
-          <p>
-            The challenge starts from a simple setup: HTML for structure, CSS for the visual
-            system, and JavaScript for interaction. CodePen 2.0 makes that structure clearer and
-            easier to manage.
-          </p>
-        </div>
-        <div class="file-stack" aria-label="Project files">
-          <article class="file-card" tabindex="0">
-            <span>01</span>
-            <strong>index.html</strong>
-            <p>Semantic sections, accessible labels, and the page foundation.</p>
-          </article>
-          <article class="file-card" tabindex="0">
-            <span>02</span>
-            <strong>style.css</strong>
-            <p>Responsive layout, glass panels, gradients, and motion details.</p>
-          </article>
-          <article class="file-card" tabindex="0">
-            <span>03</span>
-            <strong>script.js</strong>
-            <p>Interactive cards, publishing checklist, and tiny interface feedback.</p>
-          </article>
-        </div>
-      </section>
+    <section class="desktop">
+      <aside class="sidebar">
+        <div class="sidebar-head"><span></span><strong>Explorer</strong></div>
+        <div id="tree" class="tree"></div>
+      </aside>
 
-      <section class="panel" id="publish" aria-labelledby="publish-title">
-        <p class="eyebrow">GitHub Pages</p>
-        <h2 id="publish-title">404 fix checklist</h2>
-        <ol class="checklist">
-          <li><span></span> Add an <code>index.html</code> file at the repository root.</li>
-          <li><span></span> Keep <code>style.css</code> and <code>script.js</code> beside it.</li>
-          <li><span></span> Publish from the <code>main</code> branch and <code>/root</code> folder.</li>
-          <li><span></span> Wait for GitHub Pages to rebuild, then refresh the live URL.</li>
-        </ol>
-      </section>
-
-      <section class="status-card" aria-live="polite">
-        <div>
-          <p class="eyebrow">Live status</p>
-          <h2>Ready to publish</h2>
-          <p id="status-text">Files are in place. GitHub Pages can now serve the project.</p>
+      <section class="content-panel">
+        <div class="pathbar">
+          <div>
+            <p class="muted">Current directory</p>
+            <h3 id="dirTitle">Root</h3>
+          </div>
+          <div id="crumbs" class="crumbs"></div>
         </div>
-        <button class="button button--primary" id="status-button" type="button">
-          Mark as published
-        </button>
-      </section>
-    </main>
 
-    <script src="./script.js"></script>
-  </body>
+        <div class="toolbar">
+          <p>Click any file to inspect it.</p>
+          <div class="view-toggle">
+            <button id="btnGrid" class="on" data-view="grid" type="button">Grid</button>
+            <button id="btnList" data-view="list" type="button">List</button>
+          </div>
+        </div>
+
+        <div id="grid" class="grid"></div>
+      </section>
+    </section>
+  </main>
+
+  <div id="scrim" class="scrim"></div>
+  <aside id="drawer" class="drawer" aria-hidden="true">
+    <button id="pvClose" class="close" type="button">×</button>
+    <div class="preview-head">
+      <span id="pvIcon">📄</span>
+      <div>
+        <h3 id="pvName">file</h3>
+        <p id="pvPath">/</p>
+      </div>
+    </div>
+    <div class="preview-meta">
+      <span id="pvType">TYPE</span>
+      <span id="pvSize">—</span>
+      <span><b id="pvLines">—</b> lines</span>
+      <span id="pvMod">—</span>
+    </div>
+    <pre><code id="pvCode">Select a file to preview.</code></pre>
+  </aside>
+
+  <script src="./script.js"></script>
+</body>
 </html>
