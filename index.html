@@ -2,16 +2,17 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>FileVerse 2.0 — Mini IDE</title>
+<meta name="description" content="FileVerse 2.0 is an interactive multi-file mini IDE with live preview, source control, responsive testing, accessibility audit and local AI tools.">
+<title>FileVerse 2.0 — Ultra Mini IDE</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./style.css"><link rel="stylesheet" href="./extras.css">
+<link rel="stylesheet" href="./style.css"><link rel="stylesheet" href="./extras.css"><link rel="stylesheet" href="./ultra.css">
 </head>
 <body>
-<div id="loader" class="loader"><div class="loader-card"><div class="loader-files"><span class="lf html">HTML</span><span class="lf css">CSS</span><span class="lf js">JS</span></div><p class="eyebrow">Booting FileVerse 2.0</p><h2>Loading mini IDE...</h2><div class="loader-bar"><span></span></div></div></div>
+<div id="loader" class="loader"><div class="loader-card"><div class="loader-files"><span class="lf html">HTML</span><span class="lf css">CSS</span><span class="lf js">JS</span></div><p class="eyebrow">Booting FileVerse 2.0</p><h2>Loading Ultra Mini IDE...</h2><div class="loader-bar"><span></span></div></div></div>
 <main class="app">
 <section class="hero"><div><p class="eyebrow">CodePen Challenge · July 2026</p><h1>FileVerse 2.0</h1><p class="subtitle">Explore, edit, run and organize a complete multi-file project inside a playful CodePen-inspired mini IDE.</p><div class="tags"><span>#cpc-files</span><span>#miniIDE</span><span>live preview</span><span>source control</span></div><div class="hero-actions"><a href="https://github.com/LaurAndreea10/CodePen-2.0-file-options-challenge">GitHub</a><a href="https://laurandreea10.github.io/CodePen-2.0-file-options-challenge/">Live Pages</a><button id="cmdBtn">⌘K</button><button id="langBtn">RO</button></div></div><div class="file-stack" aria-hidden="true"><div class="paper html">HTML</div><div class="paper css">CSS</div><div class="paper js">JS</div></div></section>
-<section class="submission-card"><div><p class="eyebrow">Submission card</p><h2>A complete mini IDE about files.</h2><p>Edit code, create files, run a live app, inspect dependencies, simulate Git changes and finish explorer missions.</p></div><div class="submission-score"><strong>30+</strong><span>features active</span></div></section>
+<section class="submission-card"><div><p class="eyebrow">Submission card</p><h2>A complete mini IDE about files.</h2><p>Edit code, create files, run a live app, inspect dependencies, simulate Git changes and finish explorer missions.</p></div><div class="submission-score"><strong>40+</strong><span>features active</span></div></section>
 <section class="control-deck"><div><p class="eyebrow">Workspace</p><div class="mini-actions"><button id="newBtn">＋ New</button><button id="runBtn">▶ Run project</button><button id="undoBtn">↶ Undo</button></div></div><div><p class="eyebrow">Themes</p><div class="mini-actions"><button data-theme="neon">Neon</button><button data-theme="soft">Soft</button><button data-theme="terminal">Terminal</button></div></div><div><p class="eyebrow">Accessibility & export</p><div class="mini-actions"><button id="contrastBtn">High contrast</button><button id="motionBtn">Reduce motion</button><button id="exportBtn">Export project</button></div></div></section>
 <section class="workspace pro-workspace">
 <aside class="sidebar"><div class="window-controls"><span></span><span></span><span></span></div><h2>Project files</h2><label class="search-wrap"><span>⌕</span><input id="searchInput" type="search" placeholder="Search files or code..."></label><div class="search-options"><label><input id="caseSearch" type="checkbox"> Aa</label><label><input id="wordSearch" type="checkbox"> Word</label><label><input id="regexSearch" type="checkbox"> .*</label><select id="typeFilter"><option value="">All</option><option>html</option><option>css</option><option>js</option><option>json</option><option>md</option><option>svg</option></select></div><div class="pinned"><h3>Pinned files</h3><div id="pinnedList" class="pin-list"></div></div><div id="tree" class="tree"></div></aside>
@@ -30,5 +31,8 @@
 <div id="modal" class="modal" hidden><div class="modal-card"><div class="panel-head"><h3 id="modalTitle">New item</h3><button id="modalClose">×</button></div><div id="modalBody"></div></div></div>
 <div id="contextMenu" class="context-menu" hidden></div><div id="toast" class="toast"></div><div id="scrim" class="scrim"></div>
 <aside id="drawer" class="drawer"><header class="dhead"><span id="pvIcon" class="dhead-icon"></span><div class="dhead-t"><h3 id="pvName"></h3><p id="pvPath"></p></div><button id="pinBtn" class="pin-btn">☆</button><button id="pvClose" class="close">×</button></header><div class="editor-toolbar"><button id="editBtn">Edit</button><button id="saveBtn">Save · Ctrl+S</button><button id="resetBtn">Reset</button><button id="copyBtn">Copy</button><button id="downloadBtn">Download</button><label><input id="wrapBtn" type="checkbox"> Wrap</label></div><div class="dbody"><div class="kv"><span>Type</span><b id="pvType"></b></div><div class="kv"><span>Size</span><b id="pvSize"></b></div><div class="kv"><span>Lines</span><b id="pvLines"></b></div><div class="kv"><span>Status</span><b id="pvMod"></b></div><div class="code-editor"><div id="lineNumbers" class="line-numbers"></div><pre id="pvCode"></pre><textarea id="codeInput" spellcheck="false" hidden></textarea><div id="miniMap" class="minimap"></div></div></div></aside>
+<script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
 <script src="./script.js"></script>
+<script>Object.defineProperty(window,'ROOT',{configurable:true,get:()=>ROOT,set:value=>{ROOT=value}});</script>
+<script src="./ultra.js"></script>
 </body></html>
