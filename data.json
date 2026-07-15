@@ -2,87 +2,33 @@
   "name": "~",
   "type": "dir",
   "children": [
-    {
-      "name": "index.html",
-      "type": "html",
-      "size": "3.4 KB",
-      "mod": "just now",
-      "code": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <title>FileVerse 2.0</title>\n    <link rel=\"stylesheet\" href=\"./style.css\" />\n  </head>\n  <body>\n    <main class=\"app\">One Pen. Many files.</main>\n    <script src=\"./script.js\"></script>\n  </body>\n</html>"
-    },
-    {
-      "name": "style.css",
-      "type": "css",
-      "size": "7.1 KB",
-      "mod": "2m ago",
-      "code": ":root {\n  --cyan: #53f4ff;\n  --pink: #ff4fd8;\n  --green: #7cff9b;\n}\n.card:hover { transform: translateY(-3px); }\n.paper { animation: float 4s ease-in-out infinite; }"
-    },
-    {
-      "name": "script.js",
-      "type": "js",
-      "size": "5.6 KB",
-      "mod": "2m ago",
-      "code": "const FS = await fetch('./data.json').then(r => r.json());\nconst tree = buildTree(FS);\ntree.addEventListener('click', openFile);\n\nfunction openFile(node) {\n  drawer.show(node);\n}"
-    },
-    {
-      "name": "data.json",
-      "type": "json",
-      "size": "2.9 KB",
-      "mod": "now",
-      "code": "{\n  \"challenge\": \"cpc-files\",\n  \"month\": \"July 2026\",\n  \"editor\": \"CodePen 2.0\",\n  \"note\": \"This Pen reads its own file tree from this JSON.\"\n}"
-    },
-    {
-      "name": "src",
-      "type": "dir",
-      "children": [
-        {
-          "name": "tree.js",
-          "type": "js",
-          "size": "1.9 KB",
-          "mod": "5m ago",
-          "code": "export function buildTree(node) {\n  return node.children.map(render);\n}"
-        },
-        {
-          "name": "explorer.js",
-          "type": "js",
-          "size": "2.6 KB",
-          "mod": "6m ago",
-          "code": "let view = 'grid';\nfunction setView(v) { view = v; }"
-        }
-      ]
-    },
-    {
-      "name": "assets",
-      "type": "dir",
-      "children": [
-        {
-          "name": "logo.svg",
-          "type": "svg",
-          "size": "1.4 KB",
-          "mod": "12m ago",
-          "code": "<svg viewBox=\"0 0 200 200\" role=\"img\">\n  <title>FileVerse Logo</title>\n  <rect width=\"200\" height=\"200\" rx=\"42\" />\n  <path d=\"M58 52h60l28 28v68H58z\" />\n  <path d=\"M118 52v30h30\" />\n</svg>"
-        },
-        {
-          "name": "cover.svg",
-          "type": "svg",
-          "size": "5.1 KB",
-          "mod": "12m ago",
-          "code": "<svg viewBox=\"0 0 1200 630\">\n  <!-- neon cabinet artwork -->\n</svg>"
-        },
-        {
-          "name": "preview.img",
-          "type": "img",
-          "size": "84 KB",
-          "mod": "12m ago",
-          "code": "\u25EB binary \u2014 1200\u00D7630 social preview card"
-        }
-      ]
-    },
-    {
-      "name": "README.md",
-      "type": "md",
-      "size": "1.2 KB",
-      "mod": "1h ago",
-      "code": "# FileVerse 2.0\n\nA playful file explorer built for the\nJuly 2026 CodePen Challenge (#cpc-files).\n\n- Tree loaded from data.json\n- Grid / list views\n- Breadcrumb navigation\n- Slide-in source preview"
-    }
+    {"name":"index.html","type":"html","code":"<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>FileVerse Demo</title>\n</head>\n<body>\n  <main id=\"app\">\n    <h1>One Pen. Many files.</h1>\n    <p>Edit this project and press Run project.</p>\n    <button id=\"demoButton\">Launch FileVerse</button>\n  </main>\n</body>\n</html>"},
+    {"name":"style.css","type":"css","code":":root { --accent: #53f4ff; --bg: #090b18; }\n* { box-sizing: border-box; }\nbody { margin: 0; min-height: 100vh; display: grid; place-items: center; font-family: system-ui; color: white; background: radial-gradient(circle at top, #26366b, var(--bg)); }\n#app { width: min(620px, 90vw); padding: 48px; text-align: center; border: 1px solid #ffffff33; border-radius: 28px; background: #ffffff12; }\nbutton { padding: 12px 18px; border: 0; border-radius: 999px; background: var(--accent); font-weight: 800; cursor: pointer; }"},
+    {"name":"script.js","type":"js","code":"const button = document.querySelector('#demoButton');\nbutton?.addEventListener('click', () => {\n  button.textContent = 'FileVerse launched ✓';\n});"},
+    {"name":"package.json","type":"json","code":"{\n  \"name\": \"fileverse-demo\",\n  \"version\": \"2.0.0\",\n  \"scripts\": { \"dev\": \"npm run pen\", \"deploy\": \"deploy pages\" }\n}"},
+    {"name":"README.md","type":"md","code":"# FileVerse 2.0 Demo\n\nA realistic multi-file project used by the FileVerse mini IDE.\n\n- Editable source files\n- Live iframe preview\n- Source control simulation\n- Dependency graph\n- Local persistence"},
+    {"name":"src","type":"dir","children":[
+      {"name":"app.js","type":"js","code":"import { createExplorer } from './explorer.js';\ncreateExplorer('#app');"},
+      {"name":"explorer.js","type":"js","code":"export function createExplorer(target) {\n  return document.querySelector(target);\n}"},
+      {"name":"commands.js","type":"js","code":"export const commands = ['open', 'create', 'rename', 'duplicate', 'delete', 'run'];"},
+      {"name":"i18n","type":"dir","children":[
+        {"name":"en.json","type":"json","code":"{ \"run\": \"Run project\", \"new\": \"New file\" }"},
+        {"name":"ro.json","type":"json","code":"{ \"run\": \"Rulează proiectul\", \"new\": \"Fișier nou\" }"}
+      ]}
+    ]},
+    {"name":"styles","type":"dir","children":[
+      {"name":"tokens.css","type":"css","code":":root { --cyan: #53f4ff; --pink: #ff4fd8; --green: #7cff9b; }"},
+      {"name":"layout.css","type":"css","code":".workspace { display: grid; grid-template-columns: 280px 1fr 260px; gap: 22px; }"},
+      {"name":"themes.css","type":"css","code":".theme-terminal { background: #020805; color: #d8ffe6; }"}
+    ]},
+    {"name":"assets","type":"dir","children":[
+      {"name":"logo.svg","type":"svg","code":"<svg viewBox=\"0 0 200 200\" role=\"img\"><title>FileVerse logo</title><rect width=\"200\" height=\"200\" rx=\"42\"/><path d=\"M58 52h60l28 28v68H58z\"/></svg>"},
+      {"name":"cover.svg","type":"svg","code":"<svg viewBox=\"0 0 1200 630\"><rect width=\"1200\" height=\"630\" fill=\"#080914\"/><text x=\"80\" y=\"330\" fill=\"#53f4ff\" font-size=\"96\">FileVerse 2.0</text></svg>"}
+    ]},
+    {"name":".github","type":"dir","children":[
+      {"name":"workflows","type":"dir","children":[
+        {"name":"deploy.yml","type":"yaml","code":"name: Deploy Pages\non: [push]\njobs:\n  deploy:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - run: echo Deploy FileVerse"}
+      ]}
+    ]}
   ]
 }
