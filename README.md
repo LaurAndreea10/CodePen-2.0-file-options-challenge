@@ -1,52 +1,52 @@
 # FileVerse 2.0 — CodePen Challenge
 
-A polished CodePen 2.0 challenge project that turns the idea of project files into a playful mini IDE.
+A polished CodePen 2.0 challenge project that turns project files into a playful, editable mini IDE.
 
 Live demo: https://laurandreea10.github.io/CodePen-2.0-file-options-challenge/
 
 Repository: https://github.com/LaurAndreea10/CodePen-2.0-file-options-challenge
 
-## What it does
+## FileVerse Pro features
 
-FileVerse 2.0 reads a project tree from `data.json` and renders it as an interactive file explorer. The interface includes expandable folders, breadcrumbs, grid/list views, file cards, slide-in source preview, and product-like workflow tools.
-
-## Base 8/8 upgrades
-
-1. Splash/loading screen with HTML/CSS/JS boot cards.
-2. Search bar for real-time file filtering.
-3. Status bar with current path, item count, view mode and GitHub Pages sync note.
-4. Mini terminal with playful commands: `npm run pen`, `git status`, `deploy pages`.
-5. RO/EN language toggle.
-6. External action buttons for GitHub, Live Pages and CodePen.
-7. Premium README with features and deployment notes.
-8. Challenge submission card with a compact project pitch.
-
-## Premium +10 upgrade pack
-
-1. Command Palette with `Ctrl/Cmd + K`.
-2. File tabs for opened files.
-3. Favorites / pinned files.
-4. Activity timeline.
-5. Achievement badges.
-6. Theme switch: Neon, Soft and Retro Terminal.
-7. Export project summary as JSON.
-8. Accessibility mode: high contrast and reduced motion.
-9. Mini onboarding flow.
-10. Built by Laura Andreea section with portfolio CTAs.
+- Real project tree with nested folders and many file types
+- Editable source preview with line numbers, minimap, wrap, copy, reset and download
+- Save shortcut with `Ctrl/Cmd + S`
+- Live project compilation inside an iframe
+- Create files and folders from templates
+- Context menu: open, rename, duplicate, pin, copy path, download and delete
+- Drag and drop files between folders
+- Undo history
+- Grid and list views
+- Tabs and pinned files
+- Advanced search with case-sensitive, whole-word, regex and file-type filters
+- Simulated Source Control with branches, modified/added/deleted states and commits
+- Dependency graph
+- Challenge mode with five interactive missions and timer
+- Achievement badges
+- Command Palette with `Ctrl/Cmd + K`
+- Simulated terminal and GitHub Pages deployment
+- Neon, Soft and Terminal themes
+- High contrast and reduced motion modes
+- Full project export as JSON
+- Persistent workspace state in `localStorage`
+- Activity timeline and status bar
+- Responsive desktop, tablet and mobile layouts
 
 ## Current score
 
-18/18 features active.
+30+ interactive features active.
 
 ## Tech stack
 
-- HTML
-- CSS
+- Semantic HTML
+- Modern CSS
 - Vanilla JavaScript
-- JSON data tree
+- JSON project tree
+- localStorage
+- Blob and iframe `srcdoc` APIs
 - GitHub Pages
 
-## File structure
+## Repository structure
 
 ```text
 .
@@ -58,9 +58,9 @@ FileVerse 2.0 reads a project tree from `data.json` and renders it as an interac
 └── README.md
 ```
 
-## GitHub Pages settings
+The virtual project shown inside FileVerse also contains realistic `src`, `styles`, `assets`, `.github/workflows` and localization folders.
 
-Use these settings:
+## GitHub Pages settings
 
 - Source: Deploy from a branch
 - Branch: `main`
@@ -68,4 +68,4 @@ Use these settings:
 
 ## Challenge angle
 
-This project fits the CodePen 2.0 Files challenge because the interface itself is about files: file types, folders, structure, previews, navigation, command workflows and publishing flow.
+FileVerse does not merely mention the CodePen 2.0 file system. The entire interaction is built around creating, editing, moving, searching, running and publishing multi-file projects.
