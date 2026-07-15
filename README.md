@@ -1,12 +1,12 @@
-# FileVerse 2.0 — CodePen Challenge
+# FileVerse 2.0 Ultra — CodePen Challenge
 
-A polished CodePen 2.0 challenge project that turns project files into a playful, editable mini IDE.
+A polished CodePen 2.0 challenge project that turns project files into a playful, editable and professional mini IDE.
 
 Live demo: https://laurandreea10.github.io/CodePen-2.0-file-options-challenge/
 
 Repository: https://github.com/LaurAndreea10/CodePen-2.0-file-options-challenge
 
-## FileVerse Pro features
+## FileVerse Pro foundation
 
 - Real project tree with nested folders and many file types
 - Editable source preview with line numbers, minimap, wrap, copy, reset and download
@@ -19,7 +19,7 @@ Repository: https://github.com/LaurAndreea10/CodePen-2.0-file-options-challenge
 - Grid and list views
 - Tabs and pinned files
 - Advanced search with case-sensitive, whole-word, regex and file-type filters
-- Simulated Source Control with branches, modified/added/deleted states and commits
+- Simulated Source Control with branches and modified/added/deleted states
 - Dependency graph
 - Challenge mode with five interactive missions and timer
 - Achievement badges
@@ -32,9 +32,26 @@ Repository: https://github.com/LaurAndreea10/CodePen-2.0-file-options-challenge
 - Activity timeline and status bar
 - Responsive desktop, tablet and mobile layouts
 
+## Ultra Studio upgrade pack
+
+- Dual-file Split View with swap, formatting and Save Both
+- Diagnostics console with JavaScript and JSON syntax checks
+- Error, warning and success filters
+- Responsive Device Preview for desktop, tablet, mobile and landscape
+- Side-by-side Diff Viewer with accept/discard actions
+- Visual Git History with snapshot commits and workspace restore
+- Project Templates: Blank, Portfolio, Dashboard, Game and Challenge
+- Import project from JSON or ZIP
+- Export the complete virtual file system as ZIP using JSZip
+- Static accessibility audit with a score and actionable checks
+- Local, deterministic AI Assistant demo with file explanation and code-quality actions
+- Guided Product Tour with spotlight navigation
+- Keyboard shortcut `Ctrl/Cmd + \` for Split View
+- Modular Ultra implementation in separate CSS and JavaScript files
+
 ## Current score
 
-30+ interactive features active.
+**40+ interactive features active.**
 
 ## Tech stack
 
@@ -44,6 +61,7 @@ Repository: https://github.com/LaurAndreea10/CodePen-2.0-file-options-challenge
 - JSON project tree
 - localStorage
 - Blob and iframe `srcdoc` APIs
+- JSZip
 - GitHub Pages
 
 ## Repository structure
@@ -53,7 +71,9 @@ Repository: https://github.com/LaurAndreea10/CodePen-2.0-file-options-challenge
 ├── index.html
 ├── style.css
 ├── extras.css
+├── ultra.css
 ├── script.js
+├── ultra.js
 ├── data.json
 └── README.md
 ```
@@ -68,4 +88,4 @@ The virtual project shown inside FileVerse also contains realistic `src`, `style
 
 ## Challenge angle
 
-FileVerse does not merely mention the CodePen 2.0 file system. The entire interaction is built around creating, editing, moving, searching, running and publishing multi-file projects.
+FileVerse does not merely mention the CodePen 2.0 file system. The entire interaction is built around creating, editing, moving, searching, running, testing, auditing, versioning and publishing multi-file projects.
