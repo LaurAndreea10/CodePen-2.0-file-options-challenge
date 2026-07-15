@@ -49,9 +49,23 @@ Repository: https://github.com/LaurAndreea10/CodePen-2.0-file-options-challenge
 - Keyboard shortcut `Ctrl/Cmd + \` for Split View
 - Modular Ultra implementation in separate CSS and JavaScript files
 
+## Integrated Version History
+
+- Product release timeline from FileVerse 1.0 through 4.0
+- Named workspace versions with custom release notes
+- Automatic snapshots every 30 seconds when the project changes
+- Automatic safety snapshot before restoring an older version
+- Version statistics for files, folders, lines and local storage size
+- Compare a saved version with the current workspace
+- Restore the entire virtual file system from any saved version
+- Export one version or the complete history as JSON
+- Sort snapshots from newest or oldest
+- Delete individual snapshots
+- All history is stored locally in the browser
+
 ## Current score
 
-**40+ interactive features active.**
+**45+ interactive features active.**
 
 ## Tech stack
 
@@ -72,8 +86,10 @@ Repository: https://github.com/LaurAndreea10/CodePen-2.0-file-options-challenge
 ├── style.css
 ├── extras.css
 ├── ultra.css
+├── versions.css
 ├── script.js
 ├── ultra.js
+├── versions.js
 ├── data.json
 └── README.md
 ```
@@ -88,4 +104,4 @@ The virtual project shown inside FileVerse also contains realistic `src`, `style
 
 ## Challenge angle
 
-FileVerse does not merely mention the CodePen 2.0 file system. The entire interaction is built around creating, editing, moving, searching, running, testing, auditing, versioning and publishing multi-file projects.
+FileVerse does not merely mention the CodePen 2.0 file system. The entire interaction is built around creating, editing, moving, searching, running, testing, auditing, preserving, restoring, versioning and publishing multi-file projects.
